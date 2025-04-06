@@ -2,7 +2,7 @@
 // dashboard.php
 session_start();
 include '../db.php';
-if (!isset($_SESSION['user_id'])) header('Location: index.php');
+if (!isset($_SESSION['user_id'])) header('Location: ../index.php');
 $books = $db->prepare("SELECT * FROM books WHERE user_id = ?");
 $books->execute([$_SESSION['user_id']]);
 ?>
