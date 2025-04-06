@@ -2,6 +2,7 @@
 session_start();
 include '../db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Add book to the database
     $stmt = $db->prepare("INSERT INTO books (user_id, title, author, year, recommendations) VALUES (?, ?, ?, ?, ?)");
     $stmt->execute([
         $_SESSION['user_id'],

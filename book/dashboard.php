@@ -1,5 +1,4 @@
 <?php
-// dashboard.php
 session_start();
 include '../db.php';
 if (!isset($_SESSION['user_id'])) header('Location: ../index.php');
@@ -38,6 +37,7 @@ $books->execute([$_SESSION['user_id']]);
     </div>
     </nav>
     <h2>My Books</h2>
+    <!--  Displaying books in a grid layout -->
     <?php foreach ($books as $book): ?>
         <div class="book-card">
             <h3><?= htmlspecialchars($book['title']) ?> (<?= $book['year'] ?>)</h3>

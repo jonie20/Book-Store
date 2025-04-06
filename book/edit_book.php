@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../db.php';
+// Check if user is logged in
 $id = $_GET['id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $db->prepare("UPDATE books SET title=?, author=?, year=?, recommendations=? WHERE id=? AND user_id=?");
@@ -14,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
     header('Location: dashboard.php');
 }
+// Fetch the book details for editing
 $book = $db->prepare("SELECT * FROM books WHERE id=? AND user_id=?");
 $book->execute([$id, $_SESSION['user_id']]);
 $data = $book->fetch();
