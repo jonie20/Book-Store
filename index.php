@@ -13,8 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="styles/style.css">
 <form method="post" class="auth-form">
+    <h3>Login</h3>
     <input name="username" placeholder="Username" required />
     <input type="password" name="password" placeholder="Password" required />
     <button type="submit">Login</button>

@@ -18,7 +18,7 @@ $book = $db->prepare("SELECT * FROM books WHERE id=? AND user_id=?");
 $book->execute([$id, $_SESSION['user_id']]);
 $data = $book->fetch();
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../styles/style.css">
 <form method="post" class="book-form">
     <input name="title" value="<?= htmlspecialchars($data['title']) ?>" required />
     <input name="author" value="<?= htmlspecialchars($data['author']) ?>" required />

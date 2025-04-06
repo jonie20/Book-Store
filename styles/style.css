@@ -15,6 +15,9 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+.auth-form, h3 {
+    margin: 0 0 5px 0;
+}
 .auth-form input, .book-form input, .book-form textarea {
     padding: 10px;
     font-size: 1em;
