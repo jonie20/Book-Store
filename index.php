@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../styles/style.css">
 <form method="post" class="auth-form">
     <input name="username" placeholder="Username" required />
     <input type="password" name="password" placeholder="Password" required />

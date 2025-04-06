@@ -1,12 +1,12 @@
 <?php
 // dashboard.php
 session_start();
-include 'db.php';
+include '../db.php';
 if (!isset($_SESSION['user_id'])) header('Location: index.php');
 $books = $db->prepare("SELECT * FROM books WHERE user_id = ?");
 $books->execute([$_SESSION['user_id']]);
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../styles/style.css">
 <a href="add_book.php">Add Book</a> | <a href="logout.php">Logout</a>
 <h2>Your Books</h2>
 <?php foreach ($books as $book): ?>

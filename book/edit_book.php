@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 $id = $_GET['id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $db->prepare("UPDATE books SET title=?, author=?, year=?, recommendations=? WHERE id=? AND user_id=?");

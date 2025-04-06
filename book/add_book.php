@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $db->prepare("INSERT INTO books (user_id, title, author, year, recommendations) VALUES (?, ?, ?, ?, ?)");
     $stmt->execute([
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: dashboard.php');
 }
 ?>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../styles/style.css">
 <form method="post" class="book-form">
     <input name="title" placeholder="Title" required />
     <input name="author" placeholder="Author" required />
