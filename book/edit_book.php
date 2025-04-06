@@ -19,7 +19,9 @@ $book->execute([$id, $_SESSION['user_id']]);
 $data = $book->fetch();
 ?>
 <link rel="stylesheet" href="../styles/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <form method="post" class="book-form">
+    <h3>Edit Book</h3>
     <input name="title" value="<?= htmlspecialchars($data['title']) ?>" required />
     <input name="author" value="<?= htmlspecialchars($data['author']) ?>" required />
     <input name="year" type="number" value="<?= $data['year'] ?>" required />

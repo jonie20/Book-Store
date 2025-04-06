@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <link rel="stylesheet" href="../styles/style.css">
 <form method="post" class="book-form">
+    <h3>Add Book</h3>
     <input name="title" placeholder="Title" required />
     <input name="author" placeholder="Author" required />
     <input name="year" type="number" placeholder="Year" required />

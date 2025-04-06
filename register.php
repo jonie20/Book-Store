@@ -1,18 +1,8 @@
 <?php
-// Structure Overview (file-wise):
-// index.php               - Login Page
-// register.php            - Registration Page
-// dashboard.php           - User Dashboard + Book List
-// add_book.php            - Form to add a book
-// edit_book.php           - Form to edit a book
-// delete_book.php         - Script to delete a book
-// logout.php              - Logout script
-// db.php                  - MySQL DB connection
-
-
-// register.php
+// Handling session and database connection for user registration
 session_start();
 include 'db.php';
+//capture form data and register user
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -25,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <link rel="stylesheet" href="styles/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">   
 <form method="post" class="auth-form">
     <h3>Register</h3>
     <input name="username" placeholder="Username" required />
